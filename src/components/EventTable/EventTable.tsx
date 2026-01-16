@@ -1,6 +1,7 @@
-import { FixedSizeList } from 'react-window'
+import { FixedSizeList, ListChildComponentProps } from 'react-window'
 import EventRow from './EventRow'
 import type { EventTableProps } from './EventTable.types'
+import type { Event } from '../../types/event'
 
 export function EventTable({
   events,
@@ -25,14 +26,14 @@ export function EventTable({
       </div>
 
       {/* Virtualized list */}
-      <FixedSizeList
+      <FixedSizeList<Event[]>
         height={height}
         itemCount={events.length}
         itemSize={rowHeight}
         width="100%"
         itemData={events}
       >
-        {({ index, style, data }) => (
+        {({ index, style, data }: ListChildComponentProps<Event[]>) => (
           <EventRow
             event={data[index]}
             style={style}

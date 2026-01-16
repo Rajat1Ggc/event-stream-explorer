@@ -19,7 +19,7 @@ export function useEventStore(): UseEventStoreResult {
   /** Buffered events when live mode OFF */
   const bufferedLiveEvents = useRef<Event[]>([])
 
-  /** Render trigger (cheap) */
+  /** Render trigger */
   const [, forceRender] = useState(0)
 
   /** Live mode state */

@@ -146,7 +146,7 @@ export default function App() {
       <hr />
 
       {/* Event table */}
-      <EventTable isPending={isPending} events={page} />
+      <EventTable events={page} />
 
       {hasMore && (
         <button
